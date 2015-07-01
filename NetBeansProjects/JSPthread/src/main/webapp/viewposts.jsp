@@ -10,16 +10,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="style.css">
         <title>Discussion Posts</title>
     </head>
-    <body>
+    <body class="center">
         <h1>Discussion Post!</h1>
         <a href="newpost.jsp">Enter New Post</a><br />
                  
     <c:forEach var="user" items="${users}">
-        <c:out value="User: ${user.username}"/><br />
+        <strong><c:out value="${user.username}"/></strong><br />
         <c:forEach var="post" items="${user.posts}">
-            <c:out value="Post: ${post}"/><br />
+            <q><c:out value="${post}"/></q><br />
         </c:forEach>
             <hr>
     </c:forEach>
